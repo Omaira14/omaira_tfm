@@ -1,0 +1,55 @@
+# --- SO / Editor ---
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+
+# --- Python / Flask ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.venv/
+venv/
+env/
+ENV/
+.env
+*.env
+.ipynb_checkpoints/
+.pytest_cache/
+
+# --- Bases de datos locales ---
+*.sqlite3
+*.db
+
+# --- Frontend / Node ---
+node_modules/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+frontend/dist/
+frontend/build/
+frontend/.next/
+frontend/.cache/
+
+# --- Azure Functions ---
+api/__pycache__/
+api/*.pyc
+api/*.pyo
+api/*.pyd
+api/.python_packages/
+api/.venv/
+api/.env
+api/local.settings.json
+
+# --- Static Web Apps CLI ---
+.swa/
+
+
+# --- General ---
+*.bak
+*.swp
+*.tmp
+*~

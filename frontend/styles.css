@@ -1,0 +1,288 @@
+/* Header Universidad Europea */
+.ue-header {
+  width: 100vw;
+  background: #e30613;
+  padding: 0;
+  margin: 0 0 32px 0;
+  box-shadow: 0 2px 12px rgba(227,6,19,0.10);
+}
+
+.ue-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 18px 0;
+  position: relative;
+}
+
+.ue-title {
+  flex: 1;
+  text-align: center;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.ue-logo {
+  height: 48px;
+  width: auto;
+  border-radius: 8px;
+  background: #fff;
+  padding: 4px 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-left: auto;
+  margin-right: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.ue-title {
+  flex: 1;
+  text-align: center;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.ue-logo {
+  height: 48px;
+  width: auto;
+  border-radius: 8px;
+  background: #fff;
+  padding: 4px 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-left: auto;
+}
+
+.ue-logo {
+  height: 48px;
+  width: auto;
+  border-radius: 8px;
+  background: #fff;
+  padding: 4px 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.ue-title {
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Botón Limpiar */
+#clearBtn {
+  background: #fff;
+  color: #e30613;
+  border: 1.5px solid #e30613;
+  border-radius: 9px;
+  padding: 12px 24px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 6px;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  box-shadow: 0 2px 8px rgba(227,6,19,0.08);
+}
+
+#clearBtn:hover {
+  background: #e30613;
+  color: #fff;
+}
+
+body {
+  background: #fafafa;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #222;
+  margin: 0;
+}
+
+.app-container {
+  max-width: 900px;
+  min-width: 600px;
+  margin: 48px auto;
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(227,6,19,0.08);
+  border-radius: 18px;
+  padding: 40px 28px;
+  border-top: 8px solid #e30613;
+}
+
+h1 {
+  text-align: center;
+  color: #e30613;
+  margin-bottom: 28px;
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+form {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+form input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1.5px solid #e30613;
+  border-radius: 9px;
+  font-size: 1.05rem;
+  outline: none;
+  transition: border 0.2s;
+  min-width: 180px;
+}
+#numResults {
+  padding: 12px 16px;
+  border: 1.5px solid #e30613;
+  border-radius: 9px;
+  font-size: 1.05rem;
+  outline: none;
+  min-width: 160px;
+  background: #fff;
+  color: #e30613;
+  margin: 0;
+  height: 44px;
+}
+
+form input:focus {
+  border-color: #222;
+}
+
+form button {
+  background: #e30613;
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  padding: 12px 24px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(227,6,19,0.08);
+}
+
+form button:hover {
+  background: #b8000f;
+  box-shadow: 0 4px 16px rgba(227,6,19,0.15);
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  justify-items: center;
+  align-items: stretch;
+}
+
+.person-card {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(227,6,19,0.10);
+  border-radius: 14px;
+  padding: 16px 10px;
+  text-align: center;
+  transition: box-shadow 0.2s, border 0.2s;
+  border: 2px solid transparent;
+}
+
+.person-card:hover {
+  box-shadow: 0 6px 24px rgba(227,6,19,0.18);
+  border: 2px solid #e30613;
+}
+
+.person-card img {
+  width: 84px;
+  height: 84px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 3px solid #e30613;
+  background: #fff;
+}
+
+.person-name {
+  font-weight: 600;
+  color: #222;
+  font-size: 1.07rem;
+  margin-top: 4px;
+  letter-spacing: 0.5px;
+}
+
+.similarity {
+  font-size: 0.9rem;
+  color: #e30613;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.progress-container {
+  margin: 30px 0;
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 32px 0 24px 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 18px;
+  background: #e30613;
+  border-radius: 9px;
+  margin: 0 0 18px 0;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(227,6,19,0.15);
+}
+
+.progress-bar.indeterminate::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 30%;
+  background: linear-gradient(90deg, #e30613 60%, #ff4757 100%);
+  border-radius: 8px;
+  animation: indeterminate-bar 1.2s infinite cubic-bezier(0.4,0,0.2,1);
+}
+
+@keyframes indeterminate-bar {
+  0% { left: 0; width: 30%; }
+  50% { left: 70%; width: 30%; }
+  100% { left: 0; width: 30%; }
+}
+
+.progress-text {
+  font-size: 1.15rem;
+  color: #e30613;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  .app-container {
+    padding: 24px 8px;
+    max-width: 98vw;
+  }
+  .results-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}

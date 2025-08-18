@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reconocimiento por Descripción</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="ue-header">
+    <div class="ue-header-content">
+      <span class="ue-title" style="flex:1;text-align:center;">Omaira González Pérez</span>
+      <img src="logo_ue.png" alt="Universidad Europea" class="ue-logo" style="margin-left:auto;" />
+    </div>
+  </header>
+  <div class="app-container">
+    <h1>Reconocimiento por Descripción</h1>
+    <form id="searchForm">
+      <input type="text" id="descriptionInput" placeholder="Describe a la persona..." required />
+      <select id="numResults" style="border:1.5px solid #e30613;border-radius:9px;padding:12px 16px;font-size:1.05rem;">
+        <option value="3">3 resultados</option>
+        <option value="5" selected>5 resultados</option>
+        <option value="6">6 resultados</option>
+        <option value="10">10 resultados</option>
+      </select>
+      <button type="submit">Buscar</button>
+      <button type="button" id="clearBtn">Limpiar</button>
+    </form>
+    <div id="results" class="results-grid">
+      <!-- Aquí se mostrarán las coincidencias -->
+    </div>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
