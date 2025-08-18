@@ -30,18 +30,18 @@
 
 
 
+# backend/api.py
+import os
 from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
-# ¡OJO al nombre del módulo!
-# En tu captura era 'busqueda_imagenes.py', aquí estaba escrito 'busqueda_imagnes'
-from busqueda_imagnes import buscar_imagenes_por_descripcion
+from busqueda_imagnes import buscar_imagenes_por_descripcion  # <- nombre correcto
 
 app = Flask(__name__)
 CORS(app)
 
 @app.route('/api/buscar', methods=['POST'])
 def buscar():
-    data = request.get_json()
+    data = request.get_json() or {}
     descripcion = data.get('descripcion', '')
     num_resultados = int(data.get('numResultados', 5))
     try:
@@ -50,9 +50,9 @@ def buscar():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
-# Antes: '/imagenes/<filename>'
-@app.route('/api/imagenes/<filename>')
+# servir imágenes incluidas en el repo (producción y local)
+IMG_DIR = os.path.join(os.path.dirname(__file__), 'imagenes')
+
+@app.route('/api/imagenes/<path:filename>')  # permite subcarpetas y nombres con /
 def servir_imagen(filename):
-    # 'imagenes' se toma relativo a la carpeta del paquete 'backend'
-    # si este archivo está en backend/, funciona tal cual.
-    return send_from_directory('imagenes', filename)
+    return send_from_directory(IMG_DIR, filename)
