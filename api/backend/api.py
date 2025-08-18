@@ -30,13 +30,20 @@
 
 
 
+# api/backend/api.py
 import os
-from flask import Flask, request, jsonify, send_from_directory
+from urllib.parse import quote            # <-- importa quote
+from flask import Flask, request, jsonify, redirect   # <-- importa redirect
 from flask_cors import CORS
-from busqueda_imagnes import buscar_imagenes_por_descripcion  # nombre correcto
+from busqueda_imagnes import buscar_imagenes_por_descripcion
 
 app = Flask(__name__)
 CORS(app)
+
+# Variables (ponlas también en SWA > Configuration)
+STORAGE_ACCOUNT = os.getenv('STORAGE_ACCOUNT', 'TU_CUENTA')   # ej. imagenes550
+STORAGE_CONTAINER = os.getenv('STORAGE_CONTAINER', 'imagenes')
+BLOB_PREFIX = os.getenv('BLOB_PREFIX', '')   # deja '' si no usas subcarpeta
 
 @app.route('/api/buscar', methods=['POST'])
 def buscar():
@@ -49,9 +56,12 @@ def buscar():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
-# carpeta de imágenes dentro de api/backend/imagenes
-IMG_DIR = os.path.join(os.path.dirname(__file__), 'imagenes')
-
 @app.route('/api/imagenes/<path:filename>')
 def servir_imagen(filename):
-    return send_from_directory(IMG_DIR, filename)
+    # compón la ruta dentro del contenedor (añade prefijo si lo usas)
+    path_inside_container = f"{BLOB_PREFIX}{filename}".lstrip('/')
+    blob_url = (
+        f"https://{STORAGE_ACCOUNT}.blob.core.windows.net/"
+        f"{STORAGE_CONTAINER}/{quote(path_inside_container)}"
+    )
+    return redirect(blob_url, code=302)
