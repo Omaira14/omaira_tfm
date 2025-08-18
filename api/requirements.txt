@@ -1,3 +1,10 @@
 azure-functions
 flask
 flask-cors
+flask
+flask-cors
+pillow
+tqdm
+torch
+transformers
+scikit-learn

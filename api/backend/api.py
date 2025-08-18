@@ -30,11 +30,10 @@
 
 
 
-# backend/api.py
 import os
 from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
-from busqueda_imagnes import buscar_imagenes_por_descripcion  # <- nombre correcto
+from busqueda_imagnes import buscar_imagenes_por_descripcion  # nombre correcto
 
 app = Flask(__name__)
 CORS(app)
@@ -50,9 +49,9 @@ def buscar():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
-# servir imágenes incluidas en el repo (producción y local)
+# carpeta de imágenes dentro de api/backend/imagenes
 IMG_DIR = os.path.join(os.path.dirname(__file__), 'imagenes')
 
-@app.route('/api/imagenes/<path:filename>')  # permite subcarpetas y nombres con /
+@app.route('/api/imagenes/<path:filename>')
 def servir_imagen(filename):
     return send_from_directory(IMG_DIR, filename)
