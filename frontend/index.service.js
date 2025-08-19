@@ -1,5 +1,5 @@
 // Servicio para gestionar peticiones a la API
-const API_URL = 'http://localhost:5000/api/buscar';
+const API_URL = 'http://158.158.16.44';
 
 export async function buscarPersonas(descripcion, numResultados) {
   const response = await fetch(API_URL, {
