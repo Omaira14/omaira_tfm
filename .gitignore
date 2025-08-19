@@ -34,7 +34,7 @@ frontend/build/
 frontend/.next/
 frontend/.cache/
 
-# --- Azure Functions ---
+# --- Azure Functions (no usamos en Opción A, pero por si existe)
 api/__pycache__/
 api/*.pyc
 api/*.pyo
@@ -47,6 +47,8 @@ api/local.settings.json
 # --- Static Web Apps CLI ---
 .swa/
 
+# --- Backend (vive solo en la VM; no subir) ---
+/backend/
 
 # --- General ---
 *.bak
