@@ -2,7 +2,7 @@
 // Ejemplos:
 //   https://158-158-16-44.sslip.io   (si ya hiciste certbot)
 //   http://158.158.16.44             (solo para pruebas; SWA en HTTPS lo bloqueará)
-export const API_BASE = 'http://158.158.16.44';
+export const API_BASE = 'https://158-158-16-44.sslip.io';
 
 export const IMG_BASE = `${API_BASE}/imagenes/`;
 const API_URL = `${API_BASE}/api/buscar`;
